@@ -5,7 +5,7 @@
     Sidenav
   </md-sidenav>
 
-  <md-toolbar color="primary">
+  <md-toolbar color="primary" class="app-toolbar">
     <button class="app-icon-button" (click)="sidenav.toggle()">
       <i class="material-icons app-toolbar-menu">menu</i>
     </button>
@@ -16,12 +16,11 @@
   </md-toolbar>
 
   <div class="app-content">
-    <md-card> Welcome to BUCKETS! </md-card>
-    <md-card> Welcome to BUCKETS! </md-card>
-    <md-card> Welcome to BUCKETS! </md-card>
-    <md-card> Welcome to BUCKETS! </md-card>
-    <md-card> Welcome to BUCKETS! </md-card>
-    <md-card> Welcome to BUCKETS! </md-card>
+    <md-card *ngFor="let bucket of buckets | async">{{ bucket.name }}</md-card>
   </div>
 
 </md-sidenav-layout>
+
+<span class="app-action">
+  <button md-fab (click)="addBucket()"><md-icon>add</md-icon></button>
+</span>

@@ -1,7 +1,24 @@
+@import '_constants';
 @import 'theme';
 
 body {
     margin: 0;
+}
+
+md-toolbar.app-toolbar {
+    min-height: $md-toolbar-height;
+    padding: 0 16px;
+
+    md-toolbar-row {
+        height: $md-toolbar-height;
+    }
+}
+
+.app-action {
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
 
 .app-icon-button {
